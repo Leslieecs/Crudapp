@@ -27,8 +27,12 @@ function table() {
       <td>${i + 1}</td>
       <td>${details[i].name}</td>
       <td>${details[i].email}</td>
-      <td><button type="button" class="btn btn-warning" onclick="edit(${i})">Edit</button></td>
-      <td><button type="button" class="btn btn-danger" onclick="deleteData(${i})">Delete</button></td>
+      <td> <button type="button" class="btn btn-warning" onclick="edit(${i})"><span class="material-icons-outlined">
+      edit
+      </span> Editar</button></td> 
+      <td><button type="button" class="btn btn-danger" onclick="deleteData(${i})"><span class="material-icons">
+      delete_outline
+      </span> Borrar</button></td> 
     </tr> `;
     };
     table = table+`</tbody>
