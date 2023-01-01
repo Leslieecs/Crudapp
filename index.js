@@ -80,4 +80,32 @@ function deleteData(index) {
     // console.log(details)
 };
 
+function edit(index) {
+    let editForm = `<div>
+  <div class="form-group">
+    <label for="name">Update Name</label>
+    <input type="text" value="${details[index].name}" class="form-control" id="newName" aria-describedby="emailHelp" placeholder="Update Your Name">
+  </div>
+  <div class="form-group mt-3">
+    <label for="email">Email</label>
+    <input type="email" value="${details[index].email}" class="form-control" id="newEmail" placeholder="Update Your email">
+  </div>
+  <button type="submit" class="btn btn-primary mt-3" onclick="update(${index})">Update</button>
+</div>`;
+    document.getElementById("form").innerHTML = editForm;
+    // console.log('edit work');
+};
+function update(index) {
+    let newName = document.getElementById('newName');
+    let newEmail = document.getElementById('newEmail');
 
+    details[index] = {
+        name: newName.value,
+        email: newEmail.value
+    };
+    setData();
+    table();
+    document.getElementById("form").innerHTML = form;
+// console.log('update work')
+// console.log(details)
+}
